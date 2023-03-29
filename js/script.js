@@ -35,5 +35,21 @@ createApp ({
             indexImg: 0,
             
         }
+    },
+    methods: {
+        showNextImg() {
+            if (this.indexImg < this.videoGames.length - 1) {
+                this.indexImg++;
+            } else {
+                this.indexImg = 0;
+            }
+        },
+        showPrevImg() {
+            if (this.indexImg > 0) {
+                this.indexImg--;
+            } else {
+                this.indexImg = this.videoGames.length - 1
+            }
+        }
     }
 }). mount("#app")
