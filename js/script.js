@@ -33,8 +33,12 @@ createApp ({
                 }
             ] , 
             indexImg: 0,
-            
+            time: 2000,
+            inteval: null,
         }
+    },
+    mounted() {
+        this.startAutoPlay()
     },
     methods: {
         showNextImg() {
@@ -50,6 +54,12 @@ createApp ({
             } else {
                 this.indexImg = this.videoGames.length - 1
             }
+        },
+        startAutoPlay (){
+            this.interval = setInterval(this.showNextImg, this.time)
+        },
+        stopInterval () {
+            clearInterval(this.interval)
         }
     }
 }). mount("#app")
