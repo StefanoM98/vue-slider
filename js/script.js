@@ -33,7 +33,7 @@ createApp ({
                 }
             ] , 
             indexImg: 0,
-            time: 2000,
+            time: 3000,
             inteval: null,
         }
     },
@@ -54,6 +54,9 @@ createApp ({
             } else {
                 this.indexImg = this.videoGames.length - 1
             }
+        },
+        showImageIndex (index) {
+            this.indexImg = index
         },
         startAutoPlay (){
             this.interval = setInterval(this.showNextImg, this.time)
